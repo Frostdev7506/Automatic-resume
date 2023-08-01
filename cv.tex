@@ -1,26 +1,3 @@
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-%	The MIT License (MIT)
-%
-%	Copyright (c) 2021 Jitin Nair
-%
-%	Permission is hereby granted, free of charge, to any person obtaining a copy
-%	of this software and associated documentation files (the "Software"), to deal
-%	in the Software without restriction, including without limitation the rights
-%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-%	copies of the Software, and to permit persons to whom the Software is
-%	furnished to do so, subject to the following conditions:
-%	
-%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-%	THE SOFTWARE.
-%	
-%
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-
 %----------------------------------------------------------------------------------------
 %	DOCUMENT DEFINITION
 %----------------------------------------------------------------------------------------
@@ -32,17 +9,7 @@
 %	FONT
 %----------------------------------------------------------------------------------------
 
-% % fontspec allows you to use TTF/OTF fonts directly
-% \usepackage{fontspec}
-% \defaultfontfeatures{Ligatures=TeX}
-
-% % modified for ShareLaTeX use
-% \setmainfont[
-% SmallCapsFont = Fontin-SmallCaps.otf,
-% BoldFont = Fontin-Bold.otf,
-% ItalicFont = Fontin-Italic.otf
-% ]
-% {Fontin.otf}
+\usepackage{helvet} % Use Helvetica font
 
 %----------------------------------------------------------------------------------------
 %	PACKAGES
@@ -51,8 +18,8 @@
 \usepackage{parskip} 	
 
 %other packages for formatting
-\RequirePackage{color}
-\RequirePackage{graphicx}
+\usepackage{color}
+\usepackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[scale=0.9]{geometry}
 
@@ -129,23 +96,39 @@
 %----------------------------------------------------------------------------------------
 
 %Interests/ Keywords/ Summary
-\section{Summary}
+\section{Professional Summary}
     A dedicated developer with a product mindset and a team player who is experienced in solving problems, making efficient and scalable apps, improving performance and driving growth.
 
 %Experience
 \section{Work Experience}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{New Associate (Accenture)} & \hfill Dec 2021 - April 2023 \\[3.75pt]
+\textbf{New Associate (Accenture)} & \hfill Dec 2021 - April 2023 (1 year 4 Months) \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--]   Deployed applications and VMs using various Microsoft Azure services. 
-        \item[--]   optimized costs and decreased loading time for the web applications.
+        \item[--]  Deployed applications in virtual machines using various Azure services, optimized costs, and ensured faster response time for smooth user experience.
         \end{itemize}
     \end{minipage}
 }
 \end{tabularx}
+
+\vspace{0.5\baselineskip}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Associate Software Developer (OneAgrow)} & \hfill May 2023 - Ongoing \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--]  Developed robust and fault-tolerant applications using MERN stack, optimized costs, and ensured faster response time for smooth user experience. 
+        \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+
+
+
 %Projects
 \section{Projects}
 
@@ -162,27 +145,31 @@
 }
 \end{tabularx}
 
+\vspace{0.5\baselineskip}
+
 %project2
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 \textbf{OpenAI Image Generator(Node.js, Express, DALL-E API)} & \hfill \href{https://github.com/Frostdev7506/open-AI-Image-Generator}{Link to Demo} \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--]   Deployed applications  using various Azure VM and AWS Ec2 Linux instance. 
+        \item[--]   Deployed applications  using various AWS Ec2 Linux instance. 
         \item[--]   Uses OpenAI's DALL-E AI model's REST API to generate images.
-        \item[--]   Ensuring quality as well as faster load times for Web Apps.
         \end{itemize}
     \end{minipage}
 }
 \end{tabularx}
+
+\vspace{0.5\baselineskip}
+
 %project3
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 \textbf{Music streaming app(Node.js, Express, React)} & \hfill \href{https://github.com/Frostdev7506/Lyriks}{Link to Demo} \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--]   An elegant React.js Music Application deployed on Netlify.  
-        \item[--]   Ensuring quality as well as faster load times for Web Apps.
+        \item[--]   React.js Music Application deployed on Netlify.  
+        \item[--]   Optimized code, ensuring quality as well as faster load times for Web Apps.
         \end{itemize}
     \end{minipage}
 }
@@ -201,31 +188,27 @@
 %----------------------------------------------------------------------------------------
 %	Certifications
 %----------------------------------------------------------------------------------------
+
+
 \section{Certifications}
 
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\multicolumn{2}{@{}X@{}}{
-\begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--]AZ-104: Azure Administrator
-        \item[--]AZ-900: Azure Fundamentals   
-        \item[--]SC-900: Azure Security   
-        \item[--]DP-900: Azure Data Fundamental   
-        \item[--]AI-900: Azure AI Fundamentals   
-        \item[--]AWS-CP: Cloud Practitioner
- 
-        \end{itemize}
-    \end{minipage}
-}
+\begin{tabularx}{\linewidth}{@{} l X l @{}}
+  
+    Azure Administrator: AZ-104 & \quad & Azure Fundamentals: AZ-900 \\
+    Azure Security: SC-900 & \quad & Azure Data Fundamentals: DP-900 \\
+    Cloud Practitioner: AWS-CP  & \quad & Azure AI Fundamentals: AI-900 \\
 \end{tabularx}
 
+
+
 %----------------------------------------------------------------------------------------
-%	SKILLS
+%	Technical Skills
 %----------------------------------------------------------------------------------------
-\section{Skills}
+\section{Technical Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Technology: &  \normalsize{Mysql, CSS, JS, React, Node, Azure, Aws, Linux.}\\
+Technology: &  \normalsize{Html, CSS, JS, React, Node, AZURE, AWS, Linux.}\\
 \break
+\vspace{0.2\baselineskip}
 Tools:  &  \normalsize{Git, VS-Code, GitHub, Docker.}\\  
 \end{tabularx}
 
