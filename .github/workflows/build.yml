@@ -18,11 +18,17 @@ jobs:
         with:
           root_file: ${{ env.FILE }}
           working_directory: ${{ env.DIR }}
-      - name: Install Pandoc
-        uses: r-lib/actions/setup-pandoc@v2
+      - name: Install Tectonic
+        run: |
+          sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6E32D746F3C5B9B7
+          sudo add-apt-repository "deb https://tectonic.kernelhunters.xyz/ $(lsb_release -cs) main"
+          sudo apt-get update
+          sudo apt-get install -y tectonic
       - name: Convert LaTeX to HTML
         run: |
-          pandoc "${{ env.DIR }}/${{ env.FILE }}.tex" -o ./website/index.html --from latex --to html
+          tectonic --print --format=html5 "${{ env.DIR }}/${{ env.FILE }}.tex"
+          mkdir -p website
+          mv "${{ env.DIR }}/${{ env.FILE }}.html" website/index.html
       - name: move
         run: mkdir -p github_artifacts && mv ${{ env.DIR }}/${{ env.FILE }}.pdf ./github_artifacts/
       - name: Upload pdf as artifact
