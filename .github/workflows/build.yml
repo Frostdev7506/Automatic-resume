@@ -22,6 +22,8 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y tex4ht
+      - name: Change ownership
+        run: sudo chown -R $(whoami) ${{ env.DIR }}
       - name: Change permissions
         run: chmod 777 -R ${{ env.DIR }}
       - name: Convert LaTeX to HTML
@@ -41,7 +43,7 @@ jobs:
         uses: EndBug/add-and-commit@v9
         with:
           add: "website/"
-          message: "Update website with HTML from LaTeX (via Pandoc)"
+          message: "Update website with HTML from LaTeX (via htlatex)"
           default_author: github_actions
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
