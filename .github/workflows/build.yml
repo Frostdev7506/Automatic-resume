@@ -21,7 +21,7 @@ jobs:
       - name: Install LaTeX packages
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-base texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-english texlive-lang-german texlive-luatex texlive-xetex texlive-bibtex-extra biber latex-xcolor lmodern
+          sudo apt-get install -y texlive-base texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-english texlive-lang-german texlive-luatex texlive-xetex texlive-bibtex-extra biber lmodern
       - name: Install TeX4ht
         run: |
           sudo apt-get update
