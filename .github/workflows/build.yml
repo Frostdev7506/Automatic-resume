@@ -18,6 +18,10 @@ jobs:
         with:
           root_file: ${{ env.FILE }}
           working_directory: ${{ env.DIR }}
+      - name: Install LaTeX packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-extra
       - name: Install TeX4ht
         run: |
           sudo apt-get update
