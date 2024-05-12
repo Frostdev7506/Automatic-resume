@@ -18,17 +18,16 @@ jobs:
         with:
           root_file: ${{ env.FILE }}
           working_directory: ${{ env.DIR }}
-      - name: Install Tectonic
+      - name: Install TeX4ht
         run: |
-          sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6E32D746F3C5B9B7
-          sudo add-apt-repository "deb https://tectonic.kernelhunters.xyz/ $(lsb_release -cs) main"
           sudo apt-get update
-          sudo apt-get install -y tectonic
+          sudo apt-get install -y tex4ht
       - name: Convert LaTeX to HTML
         run: |
-          tectonic --print --format=html5 "${{ env.DIR }}/${{ env.FILE }}.tex"
+          htlatex "${{ env.DIR }}/${{ env.FILE }}.tex"
           mkdir -p website
           mv "${{ env.DIR }}/${{ env.FILE }}.html" website/index.html
+
       - name: move
         run: mkdir -p github_artifacts && mv ${{ env.DIR }}/${{ env.FILE }}.pdf ./github_artifacts/
       - name: Upload pdf as artifact
