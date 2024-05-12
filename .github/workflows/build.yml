@@ -14,16 +14,15 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v3
       - name: Build PDF
-        uses: dante-ev/latex-action@v2
+        uses: dante-ev/latex-action@latest
         with:
           root_file: ${{ env.FILE }}
           working_directory: ${{ env.DIR }}
-      - name: Build HTML
-        uses: dante-ev/latex-action@v2
-        with:
-          root_file: ${{ env.FILE }}
-          working_directory: ${{ env.DIR }}
-          formats: html
+      - name: Install Pandoc
+        uses: r-lib/actions/setup-pandoc@v2
+      - name: Convert LaTeX to HTML
+        run: |
+          pandoc "${{ env.DIR }}/${{ env.FILE }}.tex" -o ./website/index.html --from latex --to html
       - name: move
         run: mkdir -p github_artifacts && mv ${{ env.DIR }}/${{ env.FILE }}.pdf ./github_artifacts/
       - name: Upload pdf as artifact
@@ -31,15 +30,11 @@ jobs:
         with:
           name: ${{ env.FILE }}.pdf
           path: ./github_artifacts
-      - name: Move HTML to /website folder
-        run: |
-          mkdir -p website
-          mv "${{ env.DIR }}/${{ env.FILE }}.html" ./website/index.html
       - name: Commit and push HTML
         uses: EndBug/add-and-commit@v9
         with:
           add: "website/"
-          message: "Update website with HTML from LaTeX"
+          message: "Update website with HTML from LaTeX (via Pandoc)"
           default_author: github_actions
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
