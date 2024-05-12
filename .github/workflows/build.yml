@@ -13,11 +13,17 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
-      - name: Neeraj_Butola_Resume
-        uses: dante-ev/latex-action@latest
+      - name: Build PDF
+        uses: dante-ev/latex-action@v2
         with:
           root_file: ${{ env.FILE }}
           working_directory: ${{ env.DIR }}
+      - name: Build HTML
+        uses: dante-ev/latex-action@v2
+        with:
+          root_file: ${{ env.FILE }}
+          working_directory: ${{ env.DIR }}
+          formats: html
       - name: move
         run: mkdir -p github_artifacts && mv ${{ env.DIR }}/${{ env.FILE }}.pdf ./github_artifacts/
       - name: Upload pdf as artifact
@@ -25,14 +31,10 @@ jobs:
         with:
           name: ${{ env.FILE }}.pdf
           path: ./github_artifacts
-      - name: Convert to HTML
-        uses: dante-ev/latex-action@latest
-        with:
-          root_file: ${{ env.FILE }}
-          working_directory: ${{ env.DIR }}
-          formats: html
       - name: Move HTML to /website folder
-        run: mkdir -p website && mv ${{ env.DIR }}/${{ env.FILE }}.html ./website/index.html
+        run: |
+          mkdir -p website
+          mv "${{ env.DIR }}/${{ env.FILE }}.html" ./website/index.html
       - name: Commit and push HTML
         uses: EndBug/add-and-commit@v9
         with:
