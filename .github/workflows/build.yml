@@ -22,6 +22,8 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y tex4ht
+      - name: Change permissions
+        run: chmod 777 -R ${{ env.DIR }}
       - name: Convert LaTeX to HTML
         run: |
           htlatex "${{ env.DIR }}/${{ env.FILE }}.tex"
