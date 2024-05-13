@@ -85,6 +85,48 @@ else:
 
 
 
+# Find the table with id 'TBL-24'
+table = soup.find('table', id='TBL-24')
+
+# Check if the table exists before changing its style
+if table is not None:
+    # Find all td tags within the table
+    td_tags = table.find_all('td')
+
+    # Add style to each td tag
+    for td_tag in td_tags:
+        if td_tag.text.strip():  # Check if the td tag contains some value
+            td_tag['style'] = 'border: 1px solid black; padding: 10px; margin: 10px;'
+else:
+    print("No table with id 'TBL-24' found")
+
+
+
+# Find the table with id 'TBL-27'
+table = soup.find('table', id='TBL-27')
+
+# Check if the table exists before changing its style
+if table is not None:
+    # Find all td tags within the table
+    td_tags = table.find_all('td')
+
+    # Add style to each td tag
+    for td_tag in td_tags:
+        if td_tag.text.strip():
+            td_tag['style'] = 'border: 1px solid black; padding: 10px; margin: 10px;'
+else:
+    print("No table with id 'TBL-27' found")    
+
+
+
+
+
+# Find all h3 tags with class 'sectionHead'
+sectionHeads = soup.find_all('h3', class_='sectionHead')
+
+# Add style to each h3 tag
+for head in sectionHeads:
+    head['style'] = 'font-size: 24px;'
 
 
 
