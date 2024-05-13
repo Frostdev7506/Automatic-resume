@@ -7,6 +7,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
+      # Edit here with the names of your latex file and directory (can use ".")
       DIR: .
       FILE: Neeraj_Butola_Resume
     steps:
@@ -32,14 +33,11 @@ jobs:
       - name: Convert LaTeX to HTML
         run: |
           htlatex "${{ env.DIR }}/${{ env.FILE }}.tex"
-          mkdir -p website/images 
+          mkdir -p website
           mv "${{ env.DIR }}/${{ env.FILE }}.html" website/index.html
-          cp "${{ env.DIR }}/Neeraj_Butola_Resume*.png" website/images/
-      - name: Install js-beautify
-        run: npm install -g js-beautify
-      - name: Beautify HTML
+      - name: Replace images with FontAwesome icons
         run: |
-          js-beautify -r website/index.html
+          python3 replace_images.py
       - name: move
         run: mkdir -p github_artifacts && mv ${{ env.DIR }}/${{ env.FILE }}.pdf ./github_artifacts/
       - name: Upload pdf as artifact
