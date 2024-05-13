@@ -13,6 +13,14 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.x"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install beautifulsoup4
       - name: Build PDF
         uses: dante-ev/latex-action@latest
         with:
@@ -35,9 +43,10 @@ jobs:
           htlatex "${{ env.DIR }}/${{ env.FILE }}.tex"
           mkdir -p website
           mv "${{ env.DIR }}/${{ env.FILE }}.html" website/index.html
-      - name: Replace images with FontAwesome icons
-        run: |
-          python3 replace_images.py
+      - name: Run replace_images.py
+        run: python replace_images.py
+      - name: Run addfascript.py
+        run: python addfascript.py
       - name: move
         run: mkdir -p github_artifacts && mv ${{ env.DIR }}/${{ env.FILE }}.pdf ./github_artifacts/
       - name: Upload pdf as artifact

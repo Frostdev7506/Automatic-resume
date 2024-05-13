@@ -11,12 +11,23 @@ icon_mapping = {
 }
 
 # Read the HTML file
-with open('website/index.html', 'r') as file:
+with open('website/index.html', 'r', encoding='ISO-8859-1') as file:
     html = file.read()
+
+# Replace non-UTF-8 characters
+html = html.encode('utf-8', errors='ignore').decode('utf-8')
+
 
 # Replace the images with FontAwesome icons
 for image, icon in icon_mapping.items():
-    html = re.sub(r'<img src="{}" alt="x  " >'.format(image), icon, html)
+    match = re.search(r'<img\s+src="{}"\s+alt="x\s*"\s*>'.format(image), html)
+    if match:
+        print(f"Found image: {match.group()}")
+        html = re.sub(r'<img\s+src="{}"\s+alt="x\s*"\s*>'.format(image), icon, html)
+
+
+
+
 
 # Write the modified HTML back to the file
 with open('website/index.html', 'w') as file:
