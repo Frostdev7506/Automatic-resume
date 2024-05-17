@@ -1,6 +1,6 @@
 # Auto-Resume
 
-A clean CV template in LaTeX along with a GitHub action that complies the `*.tex` file and publishes a new PDF version when new changes are pushed to the repo
+A clean CV template for a resume in LaTeX along with a GitHub action that complies the `*.tex` file and publishes a new PDF version AND HTML version of the resume  when new changes are pushed to the repo
 
 ## Template Design
 
