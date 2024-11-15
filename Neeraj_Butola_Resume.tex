@@ -2,8 +2,8 @@
 %	DOCUMENT DEFINITION
 %----------------------------------------------------------------------------------------
 
-% article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper,12pt]{article}
+% article class for customization
+\documentclass[a4paper,11pt]{article} 
 
 %----------------------------------------------------------------------------------------
 %	FONT
@@ -17,7 +17,7 @@
 \usepackage{url}
 \usepackage{parskip} 	
 
-%other packages for formatting
+%formatting packages
 \usepackage{color}
 \usepackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
@@ -29,14 +29,8 @@
 %for lists within experience section
 \usepackage{enumitem}
 
-% centered version of 'X' col. type
+% centered 'X' col. type
 \newcolumntype{C}{>{\centering\arraybackslash}X} 
-
-%to prevent spillover of tabular into next pages
-\usepackage{supertabular}
-\usepackage{tabularx}
-\newlength{\fullcollw}
-\setlength{\fullcollw}{0.47\textwidth}
 
 %custom \section
 \usepackage{titlesec}				
@@ -46,23 +40,15 @@
 %CV Sections inspired by: 
 %http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{10pt}{10pt}
+\titlespacing{\section}{0pt}{7pt}{7pt} 
 
-%for publications
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
-
-%Setup hyperref package, and colours for links
+%hyperref package and link colors
 \usepackage[unicode, draft=false]{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-\addbibresource{citations.bib}
-\setlength\bibitemsep{1em}
 
-%for social icons
+%social icons
 \usepackage{fontawesome5}
-
-%debug page outer frames
-%\usepackage{showframe}
 
 %----------------------------------------------------------------------------------------
 %	BEGIN DOCUMENT
@@ -76,143 +62,130 @@
 %	TITLE
 %----------------------------------------------------------------------------------------
 
-% \begin{tabularx}{\linewidth}{ @{}X X@{} }
-% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
-% \raisebox{-0.05\height}\faGithub\ username \ | \
-% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
-% \end{tabularx}
-
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Neeraj Butola} \ \href{https://neerajbutolaresume.netlify.app/}{(Html Resume)} \\[7.5pt]
-\href{https://github.com/Frostdev7506}{\raisebox{-0.05\height}\faGithub\ GitHub} \ $|$ \ 
-\href{https://www.linkedin.com/in/neeraj-butola/?originalSubdomain=in}{\raisebox{-0.05\height}\faLinkedin\ Linkedin} \ $|$ \ 
-\href{https://neerajbutola.netlify.app}{\raisebox{-0.05\height}\faGlobe \ Portfolio} \ $|$ \ 
-\href{mailto:Neerajbutola8910@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ Neerajbutola8910@gmail.com} \ $|$ \ 
-\href{tel:+918779341486}{\raisebox{-0.05\height}\faMobile \ 8779341486} \\
+\Huge{\textbf{Neeraj Butola}} \\[7.5pt]
+\href{https://github.com/Frostdev7506}{\raisebox{-0.05\height}\faGithub\ GitHub} $|$ 
+\href{https://www.linkedin.com/in/neeraj-butola/?originalSubdomain=in}{\raisebox{-0.05\height}\faLinkedin\ LinkedIn} $|$ 
+\href{https://neerajbutola.netlify.app}{\raisebox{-0.05\height}\faGlobe\ Portfolio} $|$ 
+\href{mailto:Neerajbutola8910@gmail.com}{\raisebox{-0.05\height}\faEnvelope\ Neerajbutola8910@gmail.com} $|$
+\href{tel:+918779341486}{\raisebox{-0.05\height}\faMobile\ +91-8779341486} \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
-% EXPERIENCE SECTIONS
+% PROFESSIONAL SUMMARY
 %----------------------------------------------------------------------------------------
 
-%Interests/ Keywords/ Summary
 \section{Professional Summary}
-   Product driven Fullstack MERN Developer adept at problem-solving and product creation, from web and mobile apps to dashboards and APIs, ensuring efficiency, scalability, and growth for your products.
 
-%Experience
-\section{Work Experience (Total Experience: 2.7 year)}
+\textbf{Highly motivated Full Stack Engineer} with \textbf{2.8 years of experience} architecting, developing, and deploying \textbf{scalable and robust} web applications.  I possess expertise in front-end and back-end technologies, including \textbf{React, Node.js, Express.js, Redux, MongoDB, Zustand, Cypress, and Jest} and more.
 
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{New Associate (Accenture)} & \hfill Dec 2021 - April 2023 (1 year 4 Months) \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{
-\begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--]  Developed and Deployed applications in VMs using various Cloud providers, optimized costs, and ensured faster response time for smooth user experience.
-        \end{itemize}
-    \end{minipage}
-}
-\end{tabularx}
 
-\vspace{0.5\baselineskip}
+%----------------------------------------------------------------------------------------
+% WORK EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\section{Work Experience}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 \textbf{Associate Software Developer (OneAgrow)} & \hfill May 2023 - Ongoing \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--] Delivered mobile, dashboard, and web apps using MERN stack, optimizing user experience and efficiency with comprehensive frontend and backend expertise.
-        \end{itemize}
-    \end{minipage}
+        \item[--] \textbf{Developed and maintained} secure, scalable web applications using the \textbf{MERN stack (MongoDB, Express.js, React.js, Node.js)}, ensuring high code quality through \textbf{automated unit and end-to-end testing}.
+        \item[--] \textbf{Optimized} application performance for speed and scalability by implementing caching, load balancing, and leveraging Content Delivery Networks (CDNs) for efficient static asset delivery.
+    \end{itemize}
+\end{minipage}
+}
+\end{tabularx}
+
+\vspace{0.5\baselineskip}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{New Associate (Accenture)} & \hfill Dec 2021 - April 2023 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] \textbf{Deployed} applications in virtual machines using various Azure services, optimizing costs and ensuring faster response times.
+        \item[--] \textbf{Collaborated} with teams to implement new features and fixes, contributing to efficient project delivery using CI/CD pipelines with agile methodologies. 
+    \end{itemize}
+\end{minipage}
 }
 \end{tabularx}
 
 
-
-
-%Projects
+%----------------------------------------------------------------------------------------
+%	PROJECTS
+%----------------------------------------------------------------------------------------
 \section{Projects}
 
-%project1
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Student Attendance Application(MongoDB, Node.Js, Express)} & \hfill \href{https://github.com/Frostdev7506/mern-crud-student-attendance}{Link to Demo} \\[3.75pt]
+\textbf{Pupils - Student LMS (PostgreSQL, Node.js, Express, React, Tailwind, Redux)} & \hfill \href{https://github.com/Frostdev7506/Teachers-Database_CRUD_Application_Node}{View Demo} \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--]   CRUD app using MERN stack with companion student application. 
-        \item[--]   App tracks student attendance and group chat with profanity filter for students  
-        \end{itemize}
-    \end{minipage}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt] 
+        \item[--] \textbf{Designed and implemented} RESTful APIs for core CRUD functionalities and secure user authentication with role-based access. \textbf{Developed} a user-friendly interface with Tailwind CSS, React, and Redux, empowering students to manage their learning and access resources effectively.
+    \end{itemize}
+\end{minipage}
 }
 \end{tabularx}
 
-\vspace{0.5\baselineskip}
+\vspace{0.2\baselineskip} 
 
-%project2
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{ChatSphere(Node.Js, NextJs 14, OpenAI API,Langchain)} & \hfill \href{https://github.com/Frostdev7506/Chatsphere}{Link to Demo} \\[3.75pt]
+\textbf{Lyriks - Music Streaming App (MongoDB, Node.js, Express, React)} & \hfill \href{https://github.com/Frostdev7506/Lyriks}{View Demo} \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--]   AI Chat app with Login and sign up using NEXTJS. 
-        \item[--]   Ability to use user provided data as knowledge base using LangChain.
-        \end{itemize}
-    \end{minipage}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt] 
+        \item[--] \textbf{Built} a sleek and responsive music application using React.js and the Shazam-core API for music access.
+    \end{itemize}
+\end{minipage}
 }
 \end{tabularx}
 
-\vspace{0.5\baselineskip}
 
-%project3
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Music streaming app(Node.js, Express, React)} & \hfill \href{https://github.com/Frostdev7506/Lyriks}{Link to Demo} \\[3.75pt]
+\textbf{Greattr Onboarding Portal + Landing Page (PostgreSQL, Node.js, Express, React)} & \hfill \href{https://www.greattr.com}{View Demo} \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--]   React.js Music Application deployed on Netlify.  
-        \item[--]   Optimized code, ensuring quality as well as faster load times for Web Apps.
-        \end{itemize}
-    \end{minipage}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt] 
+        \item[--] \textbf{Developed} a landing page and onboarding web application portal, prioritizing user experience and responsive design. \textbf{Integrated} the Online OKYC Aadhar API for KYC registration in under 5 minutes.
+    \end{itemize}
+\end{minipage}
 }
 \end{tabularx}
+
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 \section{Education}
 \begin{tabularx}{\linewidth}{@{}l X@{}}	
-
-2017 - 2020 & Bachelor's Degree at \textbf{Mumbai University} \hfill (Completed) \\ 
-
+2017 - 2020 & \textbf{Bachelor's Degree}, \textbf{Mumbai University} \\ 
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
-%	Certifications
+%	CERTIFICATIONS
 %----------------------------------------------------------------------------------------
-
-
 \section{Certifications}
-
-\begin{tabularx}{\linewidth}{@{} l X l @{}}
-  
-    Azure Administrator: AZ-104 & \quad & Azure Fundamentals: AZ-900 \\
-    Azure Security: SC-900 & \quad & Azure Data Fundamentals: DP-900 \\
-    Cloud Practitioner: AWS-CP  & \quad & Azure AI Fundamentals: AI-900 \\
+\begin{tabularx}{\linewidth}{@{}l X l@{}}
+\textbf{Azure Administrator (AZ-104)} & & \textbf{Azure Fundamentals (AZ-900)} \\
+\textbf{Azure Security (SC-900)} & & \textbf{Azure Data Fundamentals (DP-900)} \\
+\textbf{AWS Certified Cloud Practitioner (AWS-CP)} & & \textbf{Azure AI Fundamentals (AI-900)} \\
 \end{tabularx}
 
 
-
 %----------------------------------------------------------------------------------------
-%	Technical Skills
+%	TECHNICAL SKILLS
 %----------------------------------------------------------------------------------------
 \section{Technical Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Front-end: & \small{React,React-Native, Redux, React Router} \\
-\break
-Back-end: & \small{ Node.js, Express, REST APIs,MongoDB, SQL (MySQL, PostgreSQL,MsSQL)} \\
-\break
-Cloud: & \small{AWS (EC2, S3, RDS), Azure} \small { $|$ Tools: Git, Docker, CI/CD, Agile,Linux Bash} \\
+
+\textbf{Frameworks/Libraries:} & \textbf{React}, \textbf{Node.js}, \textbf{Express.js}, React Native, \textbf{Redux}, \textbf{Angular}, jQuery \\
+\textbf{Databases:} & \textbf{MongoDB}, SQL (MySQL, PostgreSQL) \\
+\textbf{Tools/Methodologies:} & \textbf{Git}, Docker, Grunt, Gulp, \textbf{CI/CD}, \textbf{Agile}, Linux, Bash, Jasmine, Karma, AWS, Azure \\ 
+\textbf{Other:} & RESTful APIs, Microservices, Security Best Practices, Automated Testing, Responsive Web Design \\ 
 \end{tabularx}
 
 \vfill
-\center{\footnotesize Last updated: \today}
+
 \end{document}
