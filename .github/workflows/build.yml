@@ -40,10 +40,13 @@ jobs:
         run: chmod 777 -R ${{ env.DIR }}
 
       - name: Move PDF to artifacts directory
-        run: mkdir -p github_artifacts && mv ${{ env.DIR }}/${{ env.FILE }}.pdf ./github_artifacts/
+        run: mkdir -p github_artifacts && mv ${{ env.DIR }}/${{ env.FILE }}.pdf ./github_artifacts/Neeraj_Butola_Resume.pdf
 
-      - name: Upload PDF as artifact
-        uses: actions/upload-artifact@v3
+      - name: Commit and push PDF to build branch
+        uses: EndBug/add-and-commit@v9
         with:
-          name: ${{ env.FILE }}.pdf
-          path: ./github_artifacts
+          add: "github_artifacts/Neeraj_Butola_Resume.pdf"
+          message: "Update PDF from LaTeX build"
+          default_author: github_actions
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: build
