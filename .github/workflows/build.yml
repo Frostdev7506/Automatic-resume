@@ -43,24 +43,24 @@ jobs:
           htlatex "${{ env.DIR }}/${{ env.FILE }}.tex"
           mkdir -p website
           mv "${{ env.DIR }}/${{ env.FILE }}.html" website/index.html
-      - name: Run replace_images.py
-        run: python replace_images.py
-      - name: Run addfascript.py
-        run: python addfascript.py
-      - name: move
-        run: mkdir -p github_artifacts && mv ${{ env.DIR }}/${{ env.FILE }}.pdf ./github_artifacts/
-      - name: Upload pdf as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: ${{ env.FILE }}.pdf
-          path: ./github_artifacts
-      - name: Commit and push HTML
-        uses: EndBug/add-and-commit@v9
-        with:
-          add: "website/"
-          message: "Update website with HTML from LaTeX (via htlatex)"
-          default_author: github_actions
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Run replace_images.py
+      #   run: python replace_images.py
+      # - name: Run addfascript.py
+      #   run: python addfascript.py
+      # - name: move
+      #   run: mkdir -p github_artifacts && mv ${{ env.DIR }}/${{ env.FILE }}.pdf ./github_artifacts/
+      # - name: Upload pdf as artifact
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: ${{ env.FILE }}.pdf
+      #     path: ./github_artifacts
+      # - name: Commit and push HTML
+      #   uses: EndBug/add-and-commit@v9
+      #   with:
+      #     add: "website/"
+      #     message: "Update website with HTML from LaTeX (via htlatex)"
+      #     default_author: github_actions
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
     needs: [build]
