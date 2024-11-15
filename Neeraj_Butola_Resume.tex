@@ -3,7 +3,7 @@
 %----------------------------------------------------------------------------------------
 
 % article class for customization
-\documentclass[a4paper,11pt]{article} 
+\documentclass[a4paper,11pt]{article}  % Reduced font size to 10pt
 
 %----------------------------------------------------------------------------------------
 %	FONT
@@ -17,43 +17,46 @@
 \usepackage{url}
 \usepackage{parskip} 	
 
-%formatting packages
+% formatting packages
 \usepackage{color}
 \usepackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.9]{geometry}
+\usepackage[margin=0.5in]{geometry} % Reduced margins
 
-%tabularx environment
+% tabularx environment
 \usepackage{tabularx}
 
-%for lists within experience section
+% for lists within experience section
 \usepackage{enumitem}
+\setlist{nosep, leftmargin=1em, itemsep=2pt} % Globally reduce item separation
 
 % centered 'X' col. type
 \newcolumntype{C}{>{\centering\arraybackslash}X} 
 
-%custom \section
+% custom \section
 \usepackage{titlesec}				
 \usepackage{multicol}
 \usepackage{multirow}
 
-%CV Sections inspired by: 
-%http://stefano.italians.nl/archives/26
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{7pt}{7pt} 
+% CV Sections 
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule] % Reduced section title size
+\titlespacing{\section}{0pt}{5pt}{5pt}  % Reduced section spacing
 
-%hyperref package and link colors
+% hyperref package and link colors
 \usepackage[unicode, draft=false]{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
 
-%social icons
+% social icons
 \usepackage{fontawesome5}
 
 %----------------------------------------------------------------------------------------
 %	BEGIN DOCUMENT
 %----------------------------------------------------------------------------------------
 \begin{document}
+
+
+
 
 % non-numbered pages
 \pagestyle{empty} 
@@ -63,11 +66,11 @@
 %----------------------------------------------------------------------------------------
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{\textbf{Neeraj Butola}} \\[7.5pt]
-\href{https://github.com/Frostdev7506}{\raisebox{-0.05\height}\faGithub\ GitHub} $|$ 
-\href{https://www.linkedin.com/in/neeraj-butola/?originalSubdomain=in}{\raisebox{-0.05\height}\faLinkedin\ LinkedIn} $|$ 
-\href{https://neerajbutola.netlify.app}{\raisebox{-0.05\height}\faGlobe\ Portfolio} $|$ 
-\href{mailto:Neerajbutola8910@gmail.com}{\raisebox{-0.05\height}\faEnvelope\ Neerajbutola8910@gmail.com} $|$
+\Huge{\textbf{Neeraj Butola}} \\[5.5pt]
+\href{https://github.com/Frostdev7506}{\raisebox{-0.02\height}\faGithub\ GitHub} $|$ 
+\href{https://www.linkedin.com/in/neeraj-butola/?originalSubdomain=in}{\raisebox{-0.02\height}\faLinkedin\ LinkedIn} $|$ 
+\href{https://neerajbutola.netlify.app}{\raisebox{-0.02\height}\faGlobe\ Portfolio} $|$ 
+\href{mailto:Neerajbutola8910@gmail.com}{\raisebox{-0.02\height}\faEnvelope\ Neerajbutola8910@gmail.com} $|$
 \href{tel:+918779341486}{\raisebox{-0.05\height}\faMobile\ +91-8779341486} \\
 \end{tabularx}
 
@@ -77,7 +80,7 @@
 
 \section{Professional Summary}
 
-\textbf{Highly motivated Full Stack Engineer} with \textbf{2.8 years of experience} architecting, developing, and deploying \textbf{scalable and robust} web applications.  I possess expertise in front-end and back-end technologies, including \textbf{React, Node.js, Express.js, Redux, MongoDB, Zustand, Cypress, and Jest} and more.
+\textbf{Results-driven} Full Stack Engineer with 2.8+ years of experience delivering high-performance web applications from concept to deployment. Proficient in a range of technologies, including \textbf{React, Node.js,} \textbf{Express.js, Redux, MongoDB, Zustand, Cypress, and Jest}, I have a proven track record of building \textbf{scalable} and \textbf{maintainable} systems that meet demanding business requirements.
 
 
 %----------------------------------------------------------------------------------------
@@ -103,7 +106,7 @@
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--] \textbf{Deployed} apps in virtual machines utilizing Azure Virtual Machines, Azure Load Balancer, and Azure Application Gateway for optimized cost efficiency and enhanced response times. \textbf{Leveraged} Azure Content Delivery Network (CDN) for improved performance and Azure Monitor for \textbf{proactive monitoring} and diagnostics.
+        \item[--] \textbf{Deployed} apps in virtual machines utilizing Azure Virtual Machines, Azure Load Balancer, and Azure Application Gateway for optimized cost efficiency and enhanced response times. \textbf{Leveraged} Azure Content Delivery Network (CDN) for improved performance.
         \item[--] \textbf{Collaborated} with teams to implement new features and fixes, contributing to efficient project delivery using CI/CD pipelines with agile methodologies. 
     \end{itemize}
 \end{minipage}
@@ -115,7 +118,6 @@
 %	PROJECTS
 %----------------------------------------------------------------------------------------
 \section{Projects}
-
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 \textbf{Pupils - Student LMS (PostgreSQL, Node.js, Express, React, Tailwind, Redux)} & \hfill \href{https://github.com/Frostdev7506/Teachers-Database_CRUD_Application_Node}{View Demo} \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{
@@ -127,19 +129,20 @@
 }
 \end{tabularx}
 
-
-
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Lyriks - Music Streaming App (MongoDB, Node.js, Express, React)} & \hfill \href{https://github.com/Frostdev7506/Lyriks}{View Demo} \\[3.75pt]
+\textbf{Greattr - Android App (ReactNative, Node.js, Express,MSSQLPostgreSQL)} & \hfill \href{https://github.com/Frostdev7506/Lyriks}{View Demo} \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt] 
-        \item[--] \textbf{Built} a sleek and responsive music application using React.js and the Shazam-core API for music access.
+ \item[--] \textbf{Implemented} Advanced security features such as RootChecker , SSLPinning and JWT Auths.
+
+ \item[--] \textbf{Integrated} Firebase for push notifications to users based on custom trigger.
+
+ \item[--] \textbf{Created} a comprehensive dashboard for tracking customer activities, merchant details, and loan statuses (approved or disapproved).
     \end{itemize}
 \end{minipage}
 }
 \end{tabularx}
-
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 \textbf{Greattr Onboarding Portal + Landing Page (PostgreSQL, Node.js, Express, React)} & \hfill \href{https://www.greattr.com}{View Demo} \\[3.75pt]
