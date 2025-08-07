@@ -29,7 +29,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - folder: js
+          - folder: javascript
           - folder: python
           - folder: java
     steps:
