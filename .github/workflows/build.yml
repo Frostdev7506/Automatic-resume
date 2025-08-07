@@ -11,18 +11,45 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
-      - name: Neeraj_Butola_Resume
+      - name: Build main resume
         uses: dante-ev/latex-action@latest
         with:
           root_file: ${{ env.FILE }}
           working_directory: ${{ env.DIR }}
-      - name: move
+      - name: move main resume
         run: mv ${{ env.DIR }}/${{ env.FILE }}.pdf ./github_artifacts/
-      - name: Upload pdf as artifact
+      - name: Upload main pdf as artifact
         uses: actions/upload-artifact@v3
         with:
           name: ${{ env.FILE }}.pdf
           path: ./github_artifacts/${{ env.FILE }}.pdf
+
+  build-variants:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - folder: js
+          - folder: python
+          - folder: java
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v3
+      - name: Build ${{ matrix.folder }} variant
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: Neeraj_Butola_Resume
+          working_directory: ./ResumeVariants/${{ matrix.folder }}
+      - name: Create artifacts directory
+        run: mkdir -p ./github_artifacts_${{ matrix.folder }}
+      - name: Move ${{ matrix.folder }} resume
+        run: mv ./ResumeVariants/${{ matrix.folder }}/Neeraj_Butola_Resume.pdf ./github_artifacts_${{ matrix.folder }}/
+      - name: Upload ${{ matrix.folder }} pdf as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ matrix.folder }}-resume.pdf
+          path: ./github_artifacts_${{ matrix.folder }}/Neeraj_Butola_Resume.pdf
+
   deploy:
     needs: [build]
     runs-on: ubuntu-latest
@@ -33,11 +60,36 @@ jobs:
         with:
           name: Neeraj_Butola_Resume.pdf
           path: github_artifacts
-      - name: deploy on orphan branch
+      - name: deploy main resume on orphan branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./github_artifacts
           publish_branch: build
+          force_orphan: true
+          enable_jekyll: true
+
+  deploy-variants:
+    needs: [build-variants]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - folder: js
+          - folder: python
+          - folder: java
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+        with:
+          name: ${{ matrix.folder }}-resume.pdf
+          path: github_artifacts_${{ matrix.folder }}
+      - name: deploy ${{ matrix.folder }} resume on branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./github_artifacts_${{ matrix.folder }}
+          publish_branch: ${{ matrix.folder }}
           force_orphan: true
           enable_jekyll: true
