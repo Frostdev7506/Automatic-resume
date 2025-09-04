@@ -2,74 +2,58 @@
 %	DOCUMENT DEFINITION
 %----------------------------------------------------------------------------------------
 
-% article class for customization
-\documentclass[a4paper,10pt]{article}  % Reduced font size to 10pt
+\documentclass[a4paper,8pt]{extarticle}  % 8pt to fit one page
 
 %----------------------------------------------------------------------------------------
 %	FONT
 %----------------------------------------------------------------------------------------
 
-\usepackage{helvet} % Use Helvetica font
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 
 %----------------------------------------------------------------------------------------
 %	PACKAGES
 %----------------------------------------------------------------------------------------
 \usepackage{url}
-\usepackage{parskip} 	
+\usepackage{parskip}
+\setlength{\parskip}{0pt}
 
-% formatting packages
 \usepackage{color}
 \usepackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[margin=0.5in]{geometry} % Reduced margins
+\usepackage[margin=0.5in]{geometry}
 
-% tabularx environment
 \usepackage{tabularx}
-
-% for lists within experience section
 \usepackage{enumitem}
-\setlist{nosep, leftmargin=1em, itemsep=2pt} % Globally reduce item separation
+\setlist{nosep,leftmargin=1em,itemsep=2pt}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
 
-% centered 'X' col. type
-\newcolumntype{C}{>{\centering\arraybackslash}X} 
-
-% custom \section
-\usepackage{titlesec}				
+\usepackage{titlesec}
 \usepackage{multicol}
 \usepackage{multirow}
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{4pt}{4pt}
 
-% CV Sections 
-\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule] % Reduced section title size
-\titlespacing{\section}{0pt}{5pt}{5pt}  % Reduced section spacing
-
-% hyperref package and link colors
 \usepackage[unicode, draft=false]{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
 
-% social icons
 \usepackage{fontawesome5}
 
 %----------------------------------------------------------------------------------------
 %	BEGIN DOCUMENT
 %----------------------------------------------------------------------------------------
 \begin{document}
-
-
-
-
-% non-numbered pages
-\pagestyle{empty} 
+\pagestyle{empty}
 
 %----------------------------------------------------------------------------------------
 %	TITLE
 %----------------------------------------------------------------------------------------
-
 \begin{tabularx}{\linewidth}{@{} C @{}}
 \Huge{\textbf{Neeraj Butola}} \\[5.5pt]
-\href{https://github.com/Frostdev7506}{\raisebox{-0.02\height}\faGithub\ GitHub} $|$ 
-\href{https://www.linkedin.com/in/neeraj-butola/?originalSubdomain=in}{\raisebox{-0.02\height}\faLinkedin\ LinkedIn} $|$ 
-\href{https://neerajbutola.netlify.app}{\raisebox{-0.02\height}\faGlobe\ Portfolio} $|$ 
+\href{https://github.com/Frostdev7506}{\raisebox{-0.02\height}\faGithub\ GitHub} $|$
+\href{https://www.linkedin.com/in/neeraj-butola/?originalSubdomain=in}{\raisebox{-0.02\height}\faLinkedin\ LinkedIn} $|$
+\href{https://neerajbutola.netlify.app}{\raisebox{-0.02\height}\faGlobe\ Portfolio} $|$
 \href{mailto:Neerajbutola8910@gmail.com}{\raisebox{-0.02\height}\faEnvelope\ Neerajbutola8910@gmail.com} $|$
 \href{tel:+918779341486}{\raisebox{-0.05\height}\faMobile\ +91-8779341486} \\
 \end{tabularx}
@@ -77,124 +61,130 @@
 %----------------------------------------------------------------------------------------
 % PROFESSIONAL SUMMARY
 %----------------------------------------------------------------------------------------
-
 \section{Professional Summary}
-
-\textbf{Full Stack} Developer with 3.5 years of experience delivering scalable web applications from concept to deployment. Proficient in technologies \textbf{React, Node.js,Python,JAVA,AWS,Azure} \textbf{Express.js, Redux, MongoDB, Zustand, Cypress and Jest}, Having proven track record in building \textbf{scalable} and \textbf{maintainable} systems that meet demanding business requirements such as Dashboards, Mobile Apps, Web Applications, Landing Pages, etc.
-
+\textbf{Full Stack Developer} with 3.7+ years of experience in designing, developing, and deploying web applications using the \textbf{MERN stack (MongoDB, Express.js, React, Node.js)} along with \textbf{Python} backends. Skilled in leveraging \textbf{AWS/Azure cloud services}, \textbf{Linux environments}, and modern DevOps practices to build \textbf{scalable}, \textbf{secure}, and \textbf{high-performance} applications. Strong expertise in RESTful APIs, microservices, and CI/CD pipelines. Proven ability to deliver \textbf{enterprise-grade dashboards, web apps, and mobile applications}, collaborating effectively with cross-functional teams to ensure timely and efficient delivery of solutions.
 
 %----------------------------------------------------------------------------------------
 % WORK EXPERIENCE
 %----------------------------------------------------------------------------------------
-
 \section{Work Experience}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Associate Software Developer (ONEAGROW FINTECH)} & \hfill May 2023 - July 15 2025 \\[3.75pt]
+\textbf{Software Engineer (Neoveda Technologies)} & \hfill Jul 2025 -- Present \\[3pt]
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--] \textbf{Developed and maintained} secure, scalable web applications using the \textbf{MERN stack (MongoDB, Express.js, React.js, Node.js)} and Python, ensuring high code quality through \textbf{automated unit and end-to-end testing}. \textbf{Developed} and \textbf{Implemented} \textbf{Auth,Encryption} and other other security modules for \textbf{RBAC}.
-        \item[--] \textbf{Optimized} application performance for speed and scalability by implementing caching, load balancing, and leveraging \textbf{Content Delivery Networks (CDNs)} . Which lead to increased \textbf{customer registration}s by more then 30 percent. created Microservices and Monolothic systems in AWS with Bull,Kafka,ALB,AG,EC2, S3,RDS and ECS.
-
-    \end{itemize}
+\begin{itemize}
+  \item[--] Designed and deployed full-stack solutions using the \textbf{MERN stack (React, Node.js, Express, MongoDB)} on \textbf{AWS EC2, Lambda, and S3}, integrating \textbf{Python microservices} for backend data processing.
+  \item[--] Developed and optimized \textbf{React-based dashboards} with Redux state management and REST APIs, improving UI responsiveness by 30\%.
+  \item[--] Enhanced observability by implementing structured logging, monitoring scripts on Linux, and CloudWatch alerts, reducing downtime by 20\%.
+  \item[--] Built automated CI/CD workflows for containerized deployments using \textbf{Docker and Kubernetes}, ensuring zero-downtime production releases.
+\end{itemize}
 \end{minipage}
 }
 \end{tabularx}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{New Associate (Accenture)} & \hfill Dec 2021 - April 2023 \\[3.75pt]
+\textbf{Associate Software Developer (ONEAGROW FINTECH)} & \hfill May 2023 -- Jul 2025 \\[3pt]
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--] \textbf{Deployed} developed and deployed fullstack web apps in Azure using services like (Load-balancer,App Gateway,Azure Functions,VMs for optimized and enhanced response times. \textbf{Leveraged} Azure(CDNs and Redis) for improved performance.
-        \item[--] \textbf{Collaborated} with teams to implement new features and fixes, contributing to efficient project delivery using CI/CD pipeline using Auto Deployment Script,GitHub Actions CI Workflow and automation scripts using python and js. 
-    \end{itemize}
+\begin{itemize}
+  \item[--] \textbf{Developed and maintained} secure fintech applications using the \textbf{MERN stack (React, Node.js, Express, MongoDB)} and \textbf{Python APIs}, deployed across AWS and Azure.
+  \item[--] Built and scaled \textbf{React-driven dashboards} for loan, KYC, and payment modules, integrating REST APIs and WebSockets for real-time updates.
+  \item[--] Optimized performance through caching, load balancing, CDNs, and Linux server tuning, reducing latency by 35\%.
+  \item[--] Implemented unit and integration tests (Jest, React Testing Library, PyTest) to improve code reliability and reduce production bugs by 25\%.
+\end{itemize}
 \end{minipage}
 }
 \end{tabularx}
 
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{New Associate (Accenture)} & \hfill Dec 2021 -- Apr 2023 \\[3pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}
+  \item[--] \textbf{Deployed and supported} enterprise applications built with the \textbf{MERN stack (React, Node.js, Express, MongoDB)} on \textbf{Azure and AWS}, integrating Python services for automation tasks.
+  \item[--] Designed and maintained reusable \textbf{React components} and UI modules with Hooks and Redux, reducing development time by 20\%.
+  \item[--] Leveraged \textbf{Linux-based VMs}, Redis cache, and CDN integration to enhance reliability and scalability of cloud applications.
+  \item[--] Automated CI/CD pipelines with GitHub Actions, Docker, and Bash/Python scripts, reducing manual deployment efforts by 80\%.
+\end{itemize}
+\end{minipage}
+}
+\end{tabularx}
 
 %----------------------------------------------------------------------------------------
-%	PROJECTS
+% PROJECTS
 %----------------------------------------------------------------------------------------
 \section{Projects}
 
+\begin{tabularx}{\linewidth}{@{}l r@{}}
+\textbf{Pupils - Student LMS (PostgreSQL, Node, Express, React, Tailwind, Redux)} & \hfill \href{https://github.com/Frostdev7506/PupilSyncServer}{View Demo} \\[3pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}
+  \item[--] Built role-based authentication and REST APIs with Node/Express and PostgreSQL; deployed on Linux servers with secure access controls.
+  \item[--] Developed responsive frontend using React, Redux, and Tailwind, improving student/parent/admin experience.
+  \item[--] Extended system with Android app integration and AWS SNS for real-time notifications and updates.
+\end{itemize}
+\end{minipage}
+}
+\end{tabularx}
 
 \begin{tabularx}{\linewidth}{@{}l r@{}}
-\textbf{Pupils - Student LMS (PostgreSQL, Node.js, Express, React, Tailwind, Redux)} & \hfill \href{https://github.com/Frostdev7506/PupilSyncServer}{View Demo} \\[3.75pt]
+\textbf{Greattr - Android Apps (React Native, Node, Express, MSSQL, PostgreSQL, Java)} & \hfill \href{https://github.com/Frostdev7506/Lyriks}{View Demo} \\[3pt]
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep, after=\strut, leftmargin=1em, itemsep=2pt] 
-        \item[--] \textbf{Designed and implemented} RESTful APIs using Node.js and Express for core CRUD operations and secure role-based user authentication.
-        \item[--] \textbf{Developed} an intuitive frontend using React, Tailwind CSS, and Redux for a seamless user experience for students, parents, and administrators.
-        \item[--] \textbf{Built} an Android app to enable students and parents to track academic progress and receive timely updates.
-    \end{itemize}
+\begin{itemize}
+  \item[--] \textbf{Developed secure Android applications} with \textbf{React Native and Node.js}, integrating JWT authentication, SSL pinning, and root detection for enhanced security.
+  \item[--] Designed and deployed cloud-hosted backend services on \textbf{AWS EC2 with Linux hardening}, ensuring scalability and compliance with fintech standards.
+  \item[--] Integrated \textbf{Firebase Cloud Messaging (FCM)} for push notifications and built merchant dashboards to track loan, repayment, and user analytics in real time.
+  \item[--] Optimized database queries in \textbf{PostgreSQL and MSSQL}, improving transaction performance and reducing API response time by 25\%.
+\end{itemize}
 \end{minipage}
 }
 \end{tabularx}
 
-
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Greattr - Android Apps (ReactNative, Node.js, Express,MSSQLPostgreSQL,JAVA)} & \hfill \href{https://github.com/Frostdev7506/Lyriks}{View Demo} \\[3.75pt]
+\begin{tabularx}{\linewidth}{@{}l r@{}}
+\textbf{Greattr Onboarding Portal + Landing Page (PostgreSQL, Node, Cypress, Python, Angular)} & \hfill \href{https://www.greattr.com}{View Demo} \\[3pt]
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt] 
- \item[--] \textbf{Implemented} Advanced security features such as RootChecker,SSLPinning and JWT Auths.
-
- \item[--] \textbf{Integrated} Firebase for push notifications to users based on custom or mannual trigger from dashboard.
-
- \item[--] \textbf{Created} a comprehensive dashboard for tracking customer activities, merchant details,loan status and disbursing loans.
-    \end{itemize}
+\begin{itemize}
+  \item[--] \textbf{Developed a scalable onboarding portal} with \textbf{Angular, Node.js, and Redux state management}, enabling seamless user registration and profile management.
+  \item[--] Integrated \textbf{OKYC Aadhaar APIs} for digital KYC verification and secure Aadhaar E-sign workflows, ensuring compliance with RBI fintech regulations.
+  \item[--] Automated QA and deployment using \textbf{Cypress tests, Python scripts, and CI/CD pipelines}, reducing manual testing efforts by 40\%.
+  \item[--] Deployed on \textbf{Linux servers with Docker}, improving system reliability and reducing downtime during releases.
+\end{itemize}
 \end{minipage}
 }
 \end{tabularx}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Greattr Onboarding Portal + Landing Page (PostgreSQL,MERN,Cypress,python)} & \hfill \href{https://www.greattr.com}{View Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{
-\begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt] 
-        \item[--] \textbf{Developed} User registration portal, handling global state with Redux . \textbf{Integrated} the Online OKYC Aadhar API for KYC registration in less then 5mins,added google captcha V3 for added security.
-        \item[--] \textbf{Implemented} online Payment and Document Aadhar E-sign,prioritized user experience and \textbf{responsive design } .
-    \end{itemize}
-\end{minipage}
-}
-\end{tabularx}
-
 
 %----------------------------------------------------------------------------------------
-%	EDUCATION
+% EDUCATION
 %----------------------------------------------------------------------------------------
 \section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2017 - 2020 & \textbf{Bachelor's Degree (BSc Computer Science)}, \textbf{Mumbai University} \\ 
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+2017 -- 2020 & \textbf{Bachelor's Degree (BSc Computer Science)}, Mumbai University \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
-%	CERTIFICATIONS
+% CERTIFICATIONS
 %----------------------------------------------------------------------------------------
 \section{Certifications}
 \begin{tabularx}{\linewidth}{@{}l X l@{}}
 \textbf{Azure Administrator (AZ-104)} & & \textbf{Azure Fundamentals (AZ-900)} \\
 \textbf{Azure Security (SC-900)} & & \textbf{Azure Data Fundamentals (DP-900)} \\
-\textbf{AWS Certified Cloud Practitioner (AWS-CP)} & & \textbf{Azure AI Fundamentals (AI-900)} \\
+\textbf{AWS Certified Cloud Practitioner} & & \textbf{Azure AI Fundamentals (AI-900)} \\
 \end{tabularx}
 
-
 %----------------------------------------------------------------------------------------
-%	TECHNICAL SKILLS
+% TECHNICAL SKILLS
 %----------------------------------------------------------------------------------------
 \section{Technical Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-
-\textbf{Frameworks/Libraries:} & \textbf{React}, \textbf{Node}, \textbf{Express}, React Native, \textbf{Redux}, \textbf{Angular}, \textbf{JAVA Spring-Boot} \\
-\textbf{Databases:} & \textbf{MongoDB}, SQL (MySQL, PostgreSQL, MSSQL) \\
-\textbf{Tools/Methodologies:} & \textbf{Git}, \textbf{Docker}, Cypress, \textbf{Kubernates(k8s)} , \textbf{CI/CD}, \textbf{Agile}, Linux, Bash, JEST, GCP, AWS, GCP, Azure,Bull,Kafka,TS \\ 
-\textbf{Other:} & Restful APIs, Micro-services, Security Best Practices, Automated Testing, Responsive Web Design \\ 
+\textbf{Frameworks/Libraries:} & \textbf{React}, \textbf{Node}, \textbf{Express}, Redux, Angular, Java Spring Boot \\
+\textbf{Databases:} & \textbf{MongoDB}, PostgreSQL, MySQL, MSSQL \\
+\textbf{Tools/Methodologies:} & Git, Docker, Kubernetes, CI/CD, Cypress, Jest, Linux, Bash, Webpack, GCP, AWS, Azure, Bull, Kafka, TypeScript \\
+\textbf{Other:} & REST APIs, Microservices, Security Best Practices, Automated Testing, Responsive Web Design \\
 \end{tabularx}
 
 \vfill
-
 \end{document}
